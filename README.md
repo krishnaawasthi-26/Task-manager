@@ -6,10 +6,13 @@ Scalable REST API assignment with authentication, role-based access control, tas
 
 - Admin email: `admin@example.com`
 - Admin password: `AdminPass123!`
+- Admin role: `admin`
 - Frontend: `http://localhost:5173`
 - Backend: `http://localhost:8000`
 - Swagger docs: `http://localhost:8000/docs`
 - Postman collection: `docs/postman_collection.json`
+
+Use this admin account to test protected admin APIs, the admin-only user list, and `scope=all` task access.
 
 ## Submission Status
 
@@ -52,6 +55,12 @@ Scalable REST API assignment with authentication, role-based access control, tas
 ### Postman Collection
 
 ![Postman collection preview](docs/images/postman-collection-preview.png)
+
+## Real Testing Evidence
+
+The screenshot below was generated after running the backend tests, frontend production build, and a live API CRUD smoke test against the running FastAPI server.
+
+![Real testing evidence](docs/images/live-testing-evidence.png)
 
 ## Tech Stack
 
@@ -106,6 +115,8 @@ The Docker setup seeds an admin user automatically:
 admin@example.com
 AdminPass123!
 ```
+
+Full deployment notes are in `DEPLOYMENT.md`, including local Docker Compose, one-platform Render hosting, and where to document load balancer/caching/microservices details.
 
 ## Run Backend Locally
 
@@ -278,4 +289,3 @@ cd frontend && npm run build
 docker compose config
 curl http://localhost:8000/health
 ```
-
