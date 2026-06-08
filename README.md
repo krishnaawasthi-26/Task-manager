@@ -4,8 +4,8 @@ Scalable REST API assignment with authentication, role-based access control, tas
 
 ## Demo Credentials
 
-- Docker image: `https://hub.docker.com/r/<dockerhub-username>/task-manager`
-- Docker pull command: `docker pull <dockerhub-username>/task-manager:latest`
+- Docker image: `https://hub.docker.com/r/krishnaawasthi26/task-manager`
+- Docker pull command: `docker pull krishnaawasthi26/task-manager:latest`
 - Admin email: `admin@example.com`
 - Admin password: `AdminPass123!`
 - Admin role: `admin`
