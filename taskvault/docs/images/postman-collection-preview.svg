@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="700" viewBox="0 0 1120 700" role="img" aria-labelledby="title desc">
+  <title id="title">TaskVault Postman collection preview</title>
+  <desc id="desc">A preview card showing the TaskVault Postman collection folders and testing flow.</desc>
+  <rect width="1120" height="700" fill="#0f172a"/>
+  <rect x="48" y="48" width="1024" height="604" rx="26" fill="#111827" stroke="#243041" stroke-width="2"/>
+  <rect x="82" y="84" width="176" height="42" rx="21" fill="#ff6c37"/>
+  <text x="170" y="111" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#ffffff">Postman Collection</text>
+  <text x="82" y="176" font-family="Arial, sans-serif" font-size="48" font-weight="800" fill="#f8fafc">TaskVault API Testing Flow</text>
+  <text x="82" y="220" font-family="Arial, sans-serif" font-size="22" fill="#a7b0c0">Import docs/postman/TaskVault.postman_collection.json and run Login Admin first.</text>
+  <g transform="translate(82 278)">
+    <rect width="454" height="126" rx="18" fill="#0b1220" stroke="#243041"/>
+    <text x="28" y="42" font-family="Arial, sans-serif" font-size="17" font-weight="800" fill="#34d399">POST</text>
+    <text x="28" y="77" font-family="Arial, sans-serif" font-size="27" font-weight="800" fill="#f8fafc">Auth</text>
+    <text x="28" y="106" font-family="Arial, sans-serif" font-size="18" fill="#a7b0c0">register, login, refresh, logout, me</text>
+  </g>
+  <g transform="translate(584 278)">
+    <rect width="454" height="126" rx="18" fill="#0b1220" stroke="#243041"/>
+    <text x="28" y="42" font-family="Arial, sans-serif" font-size="17" font-weight="800" fill="#60a5fa">CRUD</text>
+    <text x="28" y="77" font-family="Arial, sans-serif" font-size="27" font-weight="800" fill="#f8fafc">Categories</text>
+    <text x="28" y="106" font-family="Arial, sans-serif" font-size="18" fill="#a7b0c0">global and user-owned category routes</text>
+  </g>
+  <g transform="translate(82 430)">
+    <rect width="454" height="126" rx="18" fill="#0b1220" stroke="#243041"/>
+    <text x="28" y="42" font-family="Arial, sans-serif" font-size="17" font-weight="800" fill="#60a5fa">CRUD</text>
+    <text x="28" y="77" font-family="Arial, sans-serif" font-size="27" font-weight="800" fill="#f8fafc">Tasks</text>
+    <text x="28" y="106" font-family="Arial, sans-serif" font-size="18" fill="#a7b0c0">filters, search, status, priority, due date</text>
+  </g>
+  <g transform="translate(584 430)">
+    <rect width="454" height="126" rx="18" fill="#0b1220" stroke="#243041"/>
+    <text x="28" y="42" font-family="Arial, sans-serif" font-size="17" font-weight="800" fill="#fbbf24">ADMIN</text>
+    <text x="28" y="77" font-family="Arial, sans-serif" font-size="27" font-weight="800" fill="#f8fafc">Users And Stats</text>
+    <text x="28" y="106" font-family="Arial, sans-serif" font-size="18" fill="#a7b0c0">admin-only RBAC verification requests</text>
+  </g>
+  <text x="82" y="608" font-family="Arial, sans-serif" font-size="19" fill="#94a3b8">Base URL: http://localhost:8080/api/v1</text>
+  <text x="82" y="636" font-family="Arial, sans-serif" font-size="19" fill="#94a3b8">Admin: admin@taskvault.dev / Admin@123</text>
+</svg>

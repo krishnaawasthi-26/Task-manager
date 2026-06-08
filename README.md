@@ -1,3 +1,16 @@
+# Latest Submission: TaskVault Spring Boot Assignment
+
+The complete Java 17 Spring Boot + React implementation is in [`taskvault/`](taskvault/).
+
+- Admin email: `admin@taskvault.dev`
+- Admin password: `Admin@123`
+- Frontend: `http://localhost:5173`
+- Backend Swagger: `http://localhost:8080/swagger-ui.html`
+- Setup and API documentation: [`taskvault/README.md`](taskvault/README.md)
+- Scalability note: [`taskvault/SCALABILITY.md`](taskvault/SCALABILITY.md)
+
+---
+
 # PrimeTrade Backend Intern Assignment
 
 Scalable REST API assignment with authentication, role-based access control, task CRUD, API documentation, Docker/Postgres setup, and a React frontend for testing the APIs.
