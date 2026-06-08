@@ -1,0 +1,47 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: assignment
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d assignment"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  backend:
+    build: ./backend
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      APP_NAME: PrimeTrade Backend Assignment
+      ENVIRONMENT: docker
+      DATABASE_URL: postgresql+psycopg://postgres:postgres@db:5432/assignment
+      JWT_SECRET: docker-demo-secret-change-before-production
+      ACCESS_TOKEN_EXPIRE_MINUTES: 60
+      ALLOWED_ORIGINS: http://localhost:5173,http://127.0.0.1:5173
+      ADMIN_EMAIL: admin@example.com
+      ADMIN_PASSWORD: AdminPass123!
+    ports:
+      - "8000:8000"
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        VITE_API_URL: http://localhost:8000/api/v1
+    depends_on:
+      - backend
+    ports:
+      - "5173:80"
+
+volumes:
+  postgres_data:
+
