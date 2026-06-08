@@ -4,6 +4,8 @@ Scalable REST API assignment with authentication, role-based access control, tas
 
 ## Demo Credentials
 
+- Docker image: `https://hub.docker.com/r/<dockerhub-username>/task-manager`
+- Docker pull command: `docker pull <dockerhub-username>/task-manager:latest`
 - Admin email: `admin@example.com`
 - Admin password: `AdminPass123!`
 - Admin role: `admin`
@@ -117,6 +119,33 @@ AdminPass123!
 ```
 
 Full deployment notes are in `DEPLOYMENT.md`, including local Docker Compose, one-platform Render hosting, and where to document load balancer/caching/microservices details.
+
+## Build One Docker Image
+
+The root `Dockerfile` builds one image that serves the frontend and backend together:
+
+```bash
+docker build -t task-manager:latest .
+docker run --rm -p 8000:8000 \
+  -e JWT_SECRET=local-docker-secret \
+  -e ADMIN_EMAIL=admin@example.com \
+  -e ADMIN_PASSWORD=AdminPass123! \
+  task-manager:latest
+```
+
+Then open:
+
+```text
+http://localhost:8000
+```
+
+To push to Docker Hub:
+
+```bash
+docker login
+docker tag task-manager:latest <dockerhub-username>/task-manager:latest
+docker push <dockerhub-username>/task-manager:latest
+```
 
 ## Run Backend Locally
 

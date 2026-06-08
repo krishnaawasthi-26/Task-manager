@@ -44,6 +44,48 @@ Stop and remove the local Postgres volume:
 docker compose down -v
 ```
 
+## Option 1B: Build One Docker Image
+
+The root `Dockerfile` builds a single image that serves:
+
+- React frontend at `/`
+- FastAPI backend at `/api/v1`
+- Swagger docs at `/docs`
+
+Build the image:
+
+```bash
+docker build -t task-manager:latest .
+```
+
+Run the image:
+
+```bash
+docker run --rm -p 8000:8000 \
+  -e JWT_SECRET=local-docker-secret \
+  -e ADMIN_EMAIL=admin@example.com \
+  -e ADMIN_PASSWORD=AdminPass123! \
+  task-manager:latest
+```
+
+Open:
+
+```text
+App:     http://localhost:8000
+API:     http://localhost:8000/api/v1
+Swagger: http://localhost:8000/docs
+```
+
+Push to Docker Hub:
+
+```bash
+docker login
+docker tag task-manager:latest <dockerhub-username>/task-manager:latest
+docker push <dockerhub-username>/task-manager:latest
+```
+
+Docker Hub repository names must be lowercase, so use `task-manager` instead of `Task-manager`.
+
 ## Option 2: Host Everything On Render
 
 Render is the simplest single-platform deployment option for this assignment because one dashboard can create:
@@ -199,4 +241,3 @@ Health check:
 ```bash
 curl http://localhost:8000/health
 ```
-
